@@ -1,11 +1,25 @@
 $(document).ready(function () {
     const businessHoursStart = 9;
     const businessHoursEnd = 17;
+    const selectedDate = moment();
   
-    // Display the current day at the top of the calendar
-    $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
+    function updateSelectedDate(date) {
+      selectedDate.date(date.date());
+      selectedDate.month(date.month());
+      selectedDate.year(date.year());
+      $("#currentDay").text(selectedDate.format("dddd, MMMM Do YYYY"));
+      loadEvents();
+    }
   
-    // Create timeblocks for standard business hours
+    $("#datepicker").datepicker({
+      todayHighlight: true,
+      autoclose: true,
+    }).on('changeDate', function (e) {
+      updateSelectedDate(e.date);
+    });
+  
+    updateSelectedDate(moment());
+  
     for (let i = businessHoursStart; i <= businessHoursEnd; i++) {
       const row = $("<div>").addClass("row time-block");
       const hourCol = $("<div>").addClass("col-md-1 hour").text(moment({ hour: i }).format("hA"));
@@ -18,7 +32,6 @@ $(document).ready(function () {
       textareaCol.attr("data-hour", i);
     }
   
-    // Color-code each timeblock based on past, present, and future
     function updateTimeblockColors() {
       const currentHour = moment().hour();
   
@@ -38,26 +51,29 @@ $(document).ready(function () {
     updateTimeblockColors();
     setInterval(updateTimeblockColors, 60000); // Update colors every minute
   
-    // Load events from local storage
     function loadEvents() {
       $(".description").each(function () {
         const hour = $(this).attr("data-hour");
-        const event = localStorage.getItem("event-" + hour);
+        const eventKey = `event-${selectedDate.format("YYYY-MM-DD")}-${hour}`;
+        const event = localStorage.getItem(eventKey);
   
         if (event) {
           $(this).val(event);
+        } else {
+          $(this).val('');
         }
       });
     }
   
     loadEvents();
   
-    // Save event in local storage when the save button is clicked
     $(".saveBtn").on("click", function () {
       const hour = $(this).siblings(".description").attr("data-hour");
       const event = $(this).siblings(".description").val();
+      const eventKey = `event-${selectedDate.format("YYYY-MM-DD")}-${hour}`;
   
-      localStorage.setItem("event-" + hour, event);
+      localStorage.setItem(eventKey, event);
+      toastr.success("Event saved!");
     });
   });
   

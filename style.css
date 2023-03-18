@@ -2,6 +2,7 @@ body {
     font-family: 'Open+Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
+    background-color: #f8f9fa;
   }
   
   textarea {
@@ -19,6 +20,11 @@ body {
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
+  }
+  
+  .datepicker-inline {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .description {
