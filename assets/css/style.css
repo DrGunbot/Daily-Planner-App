@@ -1,0 +1,186 @@
+/* =============================
+   Daily Planner App CSS
+   ============================= */
+
+/* Body Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background-color: #f8f9fa;
+}
+
+/* Textarea Styles */
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+/* Datepicker Styles */
+.datepicker-inline {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Description Styles */
+.description {
+  white-space: pre-wrap;
+}
+
+/* Time Block Styles */
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Row Styles */
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;
+}
+
+/* Hour Styles */
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
+/* Past Styles */
+.past {
+  background-color: #858585;
+  color: white;
+}
+
+/* Present Styles */
+.present {
+  background-color: red;
+  color: white;
+}
+
+/* Future Styles */
+.future {
+  background-color: #29be00;
+  color: white;
+}
+
+/* Save Button Styles */
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06aed5;
+  color: white;
+}
+
+/* Save Button Hover Styles */
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1c1c1c;
+  color: #f8f9fa;
+}
+
+/* Dark Mode Textarea Styles */
+.dark-mode textarea {
+  color: #f8f9fa;
+}
+
+/* Dark Mode Jumbotron Styles */
+.dark-mode .jumbotron {
+  border-bottom: 10px solid #f8f9fa;
+  color: #f8f9fa;
+}
+
+/* Dark Mode Jumbotron H1 Styles */
+.dark-mode .jumbotron h1 {
+  color: #f8f9fa;
+}
+
+/* Dark Mode Datepicker Styles */
+.dark-mode #datepicker {
+  background-color: #f8f9fa;
+}
+
+/* Dark Mode Datepicker Table Styles */
+.dark-mode #datepicker table {
+  color: #1c1c1c;
+}
+
+/* Dark Mode Row Styles */
+.dark-mode .row {
+  border-top: 1px solid #f8f9fa;
+}
+
+/* Dark Mode Hour Styles */
+.dark-mode .hour {
+  background-color: #1c1c1c;
+  color: #f8f9fa;
+  border-top: 1px dashed #f8f9fa;
+}
+
+/* Dark Mode Past Styles */
+.dark-mode .past {
+  background-color: #686868;
+  color: #f8f9fa;
+}
+
+/* Dark Mode Present Styles */
+.dark-mode .present {
+  background-color: #ff6961;
+  color: #f8f9fa;
+}
+
+/* Dark Mode Future Styles */
+.dark-mode .future {
+  background-color: #6ca067;
+  color: #f8f9fa;
+}
+
+/* Dark Mode Save Button Styles */
+.dark-mode .saveBtn {
+  background-color: #4285f4;
+}
+
+/* Media Queries for Mobile and Tablet Devices */
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding: 0;
+  }
+  .jumbotron h1 {
+    font-size: 2.5rem;
+  }
+  .jumbotron p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .jumbotron {
+    padding: 0;
+  }
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+  .jumbotron p {
+    font-size: 1.25rem;
+  }
+}
